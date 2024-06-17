@@ -49,6 +49,32 @@
 
   ssh into the server or EC2 instance
   (ssh -i ~/.ssh/key-pair.pem ec2-user@publicIp)
+
+
+  # install docker on the EC2 instance
+    update the binaries (sudo yum update)
+    install docker ( sudo yum install docker)
+    start docker daemon (sudo service docker start)
+    to be able to run docker commands without sudo add docker to user group ( usermod -aG docker $USER)
+    exit from the EC2 instance and login again to the instance
+
+
+# Deploy Docker image from private Docker repository on EC2 instance
+  build the application into docker image and push to docker private repository
+  (docker build -t nanaot/java-app:try.1 .)
+  (docker push nanaot/java-app:try.1)
+
+
+  pull the application image from the private docker repository to the ec2 instance
+  docker pull ( 'docker pull nanaot/java-app:try.1)
+
+  run the application by attaching a port 
+  docker run -p 3000:3080 -d nanaot/java-app:try.1
+
+  application can be started on the browser 
+  (IP of ec2 instance + port where applicatin is running(
+  IP:port
+    
     
 
     
