@@ -74,6 +74,8 @@
   application can be started on the browser 
   (IP of ec2 instance + port where applicatin is running(
   IP:port
+
+  open port 3000 from the security group of the instance
     
     
 
