@@ -6,9 +6,11 @@ pipeline {
 
   stages{
     stage('build jar'){
-      script{
-        echo 'building jar file for application'
-        sh 'npm pack'
+      steps{
+        script{
+          echo 'building jar file for application'
+          sh 'npm pack'
+        }
       }
     }
 
