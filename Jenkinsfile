@@ -9,6 +9,7 @@ pipeline {
       steps{
         script{
           echo 'building jar file for application'
+          sh 'npm build'
           sh 'npm pack'
         }
       }
