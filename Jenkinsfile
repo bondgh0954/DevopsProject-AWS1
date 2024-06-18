@@ -5,15 +5,7 @@ pipeline {
   }
 
   stages{
-    stage('build jar'){
-      steps{
-        script{
-          echo 'building jar file for application'
-          sh 'npm build'
-          sh 'npm pack'
-        }
-      }
-    }
+
 
     stage('build image'){
       steps{
