@@ -11,7 +11,7 @@ pipeline {
         sh 'npm pack'
       }
     }
-  
+
     stage('build image'){
       steps{
         script{
